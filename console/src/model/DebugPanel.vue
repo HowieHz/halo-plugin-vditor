@@ -21,7 +21,7 @@ import type { EditorConfig } from "@/utils/config-utils";
 import { renderHTML } from "@/utils/vditor-utils";
 import { VButton } from "@halo-dev/components";
 import type Vditor from "vditor";
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 
 const debugOpOpen = ref<boolean>(false);
 

@@ -49,14 +49,10 @@ watch(props, (val, old) => {
 });
 
 const htmlEncode = (str: string) => {
-  let s = "";
   if (str.length === 0) {
     return "";
   }
-  s = str.replace(/</g, "&lt;");
-  s = s.replace(/>/g, "&gt;");
-  s = s.replace(/"/g, "&quot;");
-  return s;
+  return str.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 };
 </script>
 

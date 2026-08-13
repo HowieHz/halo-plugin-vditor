@@ -18,19 +18,19 @@ public class VditorConfiguration {
     RouterFunction<ServerResponse> editorOptionsRouter() {
         return RouterFunctions.route()
             .GET("/apis/api.vditor.mczhengyi.top/editor-options",
-                request -> settingFetcher.getValues()
+                request -> settingFetcher.getSettingValues()
                     .flatMap(result -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(result)
                     )
             )
             .GET("/apis/api.vditor.mczhengyi.top/macros",
-                request -> settingFetcher.getValues()
+                request -> settingFetcher.getSettingValues()
                     .flatMap(result -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(result.get("basic").get("macros"))))
             .GET("/apis/api.vditor.mczhengyi.top/renders",
-                request -> settingFetcher.getValues()
+                request -> settingFetcher.getSettingValues()
                     .flatMap(res -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(res.get("basic").get("customRenders"))))
